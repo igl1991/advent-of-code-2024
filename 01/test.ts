@@ -1,5 +1,5 @@
-import {describe, it, expect } from '@jest/globals'
-import { calc } from '.'
+import { describe, expect, it } from '@jest/globals'
+import { calc, readFile } from '.'
 
 describe('day 01', ()=>{
     it('should calculate correctly on sorted array', ()=>{
@@ -18,5 +18,11 @@ describe('day 01', ()=>{
 
     it('should return fail with uneven array lengths', ()=>{
         expect(()=>calc([], [1])).toThrow()
+    })
+
+    it('should parse file correctly', ()=>{
+        const data = readFile()
+        expect(data[0].length).toBe(1000)
+        expect(data[1].length).toBe(1000)
     })
 })

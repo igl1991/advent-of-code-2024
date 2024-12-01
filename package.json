@@ -9,6 +9,7 @@
   "author": "Isabelle Glasmacher",
   "license": "ISC",
   "dependencies": {
+    "@types/node": "^22.10.1",
     "typescript": "^5.7.2"
   },
   "devDependencies": {

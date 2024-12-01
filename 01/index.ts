@@ -1,4 +1,21 @@
 console.log('Solving advent of code day 1');
+import * as fs from 'fs';
+
+type Data = [number[], number[]]
+
+export function readFile(): Data {
+    const data: Data = [[], []]
+
+    const fileContent = fs.readFileSync('01/input.txt', 'utf8')
+    const lines = fileContent.split('\n')
+    for (const line of lines) {
+        const [item1, item2] = line.split('   ')
+        data[0].push(Number(item1))
+        data[1].push(Number(item2))
+    }
+    
+    return data
+}
 
 export function calc(locationList1: number[], locationList2: number[]): number {
     if (locationList1.length !== locationList2.length) {
