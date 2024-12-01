@@ -1,6 +1,7 @@
 import { describe, expect, it } from '@jest/globals'
 import { calculateTotalDistance } from './calculateTotalDistance.ts'
 import {readFile } from './readFile.ts'
+import { calculateSimilarityScore } from './calculateSimilarityScore.ts'
 
 describe('day 01 - part 1', ()=>{
     describe('calculate', ()=>{
@@ -65,6 +66,9 @@ describe('day 01 - part 1', ()=>{
 
 describe('day 01 - part 2', ()=>{
     it('should calculate similarity score', ()=>{
-        expect()
+        expect(calculateSimilarityScore(
+            [3, 4, 2, 1, 3,3],
+            [4, 3, 5, 3, 9, 3]
+        )).toBe(31)
     })
 })
