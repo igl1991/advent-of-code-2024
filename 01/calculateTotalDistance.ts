@@ -1,4 +1,4 @@
-export function calculate(locationList1: number[], locationList2: number[]): number {
+export function calculateTotalDistance(locationList1: number[], locationList2: number[]): number {
     if (locationList1.length !== locationList2.length) {
         throw new Error('there should be equal amount of locations')
     }

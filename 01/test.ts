@@ -1,32 +1,32 @@
 import { describe, expect, it } from '@jest/globals'
-import { calculate } from './calculate.ts'
+import { calculateTotalDistance } from './calculateTotalDistance.ts'
 import {readFile } from './readFile.ts'
 
-describe('day 01', ()=>{
+describe('day 01 - part 1', ()=>{
     describe('calculate', ()=>{
         it('should calculate correctly for testinput', ()=>{
-            expect(calculate(
+            expect(calculateTotalDistance(
                 [3, 4, 2, 1, 3, 3],
                 [4, 3, 5, 3, 9, 3]
             )).toBe(11)
         })
 
         it('should calculate correctly on sorted array', ()=>{
-            expect(calculate(
+            expect(calculateTotalDistance(
                 [1, 2, 3], 
                 [2, 4, 5]
             )).toBe(5)
         })
         
         it('should calculate correctly on unsorted array', ()=>{
-            expect(calculate(
+            expect(calculateTotalDistance(
                 [2, 3, 1], 
                 [5, 4, 2]
             )).toBe(5)
         })
     
         it('should return fail with uneven array lengths', ()=>{
-            expect(()=>calculate([], [1])).toThrow()
+            expect(()=>calculateTotalDistance([], [1])).toThrow()
         })
     })
 
@@ -60,5 +60,11 @@ describe('day 01', ()=>{
 ]
 `)
         })
+    })
+})
+
+describe('day 01 - part 2', ()=>{
+    it('should calculate similarity score', ()=>{
+        expect()
     })
 })
