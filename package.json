@@ -4,8 +4,9 @@
   "description": "advent of code challenge 2024 using typescript",
   "scripts": {
     "test": "jest",
-    "run-01": "node --experimental-transform-types --experimental-strip-types 01/index.ts"
+    "01": "node --experimental-transform-types --experimental-strip-types 01/index.ts"
   },
+  "type": "module",
   "author": "Isabelle Glasmacher",
   "license": "ISC",
   "dependencies": {
