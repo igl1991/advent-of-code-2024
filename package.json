@@ -1,0 +1,14 @@
+{
+  "name": "advent-of-code-2024",
+  "version": "1.0.0",
+  "description": "advent of code challenge 2024 using typescript",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "run-01": "node --experimental-transform-types --experimental-strip-types 01/index.ts"
+  },
+  "author": "Isabelle Glasmacher",
+  "license": "ISC",
+  "dependencies": {
+    "typescript": "^5.7.2"
+  }
+}
