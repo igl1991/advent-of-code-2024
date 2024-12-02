@@ -6,7 +6,6 @@
     "test": "jest",
     "01": "node --experimental-transform-types --experimental-strip-types 01/index.ts"
   },
-  "type": "module",
   "author": "Isabelle Glasmacher",
   "license": "ISC",
   "dependencies": {
