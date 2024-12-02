@@ -35,13 +35,11 @@ export function reportIsSave_leveraged(report: Report, itemWasRemoved = false): 
 
         if (isNotOk) {
             if (itemWasRemoved) return false
-
             itemWasRemoved = true
 
             let newReport = [...report]
             if (i === 0) {
-                
-                newReport.splice(i, 1)
+                newReport.splice(0, 1)
                 if (reportIsSave_leveraged(newReport, itemWasRemoved)) {
                     order = undefined
                     continue
