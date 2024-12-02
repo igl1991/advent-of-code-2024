@@ -1,5 +1,5 @@
 import * as fs from 'fs';
-import {type Report} from './reportIsSave'
+import {type Report} from './reportIsSave.ts'
 
 export function readFile(fileName: string): Report[] {
     const data: Report[] = []
