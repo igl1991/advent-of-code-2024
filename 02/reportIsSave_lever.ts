@@ -22,13 +22,40 @@ function isDiffOk(currentItem: number, nextItem: number): boolean {
     return true  
 }
 
-export function reportIsSave_leveraged(report: Report): boolean {
+export function reportIsSave_leveraged(report: Report, itemWasRemoved = false): boolean {
     let order
     for (let i=0; i<report.length - 1; i++) {
-        if (order === undefined) order = getOrder(report[i], report[i+1])
-        if (!isOrderOk(order, report[i], report[i+1])) return false
+        const currentItem = report[i]
+        const nextItem = report[i+1]
 
-        if (!isDiffOk(report[i], report[i+1])) return false
+        if (order === undefined) order = getOrder(currentItem, nextItem)
+        const isNotOk = 
+            !isOrderOk(order, currentItem, nextItem) || 
+            !isDiffOk(currentItem, nextItem)
+
+        if (isNotOk) {
+            if (itemWasRemoved) return false
+
+            itemWasRemoved = true
+
+            let newReport = [...report]
+            if (i === 0) {
+                
+                newReport.splice(i, 1)
+                if (reportIsSave_leveraged(newReport, itemWasRemoved)) {
+                    order = undefined
+                    continue
+                }
+                newReport = [...report]
+            }
+
+            newReport.splice(i + 1, 1)
+            if (reportIsSave_leveraged(newReport, itemWasRemoved)) {
+                continue
+            }
+
+            return false
+        }
     }
 
     return true;

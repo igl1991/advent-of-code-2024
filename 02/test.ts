@@ -70,5 +70,13 @@ describe('day 02 - part 2', ()=>{
         it('should mark report as safe with increase', ()=> {
             expect(reportIsSave_leveraged([1,3,6,7,9])).toBe(true)
         })
+        
+        it('is save with removing first item', ()=> {
+            expect(reportIsSave_leveraged([10,3,6,7,9])).toBe(true)
+        })   
+
+        it('is save with removing last item', ()=> {
+            expect(reportIsSave_leveraged([1,3,6,7,6])).toBe(true)
+        })
     })    
 })
