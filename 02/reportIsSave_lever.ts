@@ -22,7 +22,7 @@ function isDiffOk(currentItem: number, nextItem: number): boolean {
     return true  
 }
 
-export function reportIsSave(report: Report): boolean {
+export function reportIsSave_leveraged(report: Report): boolean {
     let order
     for (let i=0; i<report.length - 1; i++) {
         if (order === undefined) order = getOrder(report[i], report[i+1])
